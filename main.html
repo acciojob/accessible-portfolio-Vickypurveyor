@@ -1,33 +1,79 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Portfolio</title>
+    <style>
+        nav {
+            background: #f4f4f4;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+    </style>
 </head>
-
 <body>
-	
-		<nav>
-			<ul>
-				<li><a href="#"> ABOUT ME</a> </li>
-				<li> <a href="#">DESIGN PROCESS</a> </li>
-				<li><a href="#"> PROJECTS</a> </li>
-			</ul>
-		</nav>
-	
-	<hr>
-	
-		<h1> This is heading </h1>
-		<p>
-			<b>UX Design</b> with accessibility in mind
-		</p>
-		<img src="ux.img" alt="ui developer">
-	
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <nav role="navigation" aria-label="Main navigation">
+        <ul role="list">
+            <li role="listitem"><a href="#about" role="link">About</a></li>
+            <li role="listitem"><a href="#projects" role="link">Projects</a></li>
+            <li role="listitem"><a href="#contact" role="link">Contact</a></li>
+        </ul>
+    </nav>
 
+    <main>
+      
+        <header>
+            <h1 role="heading" aria-level="1">Vicky's Portfolio</h1>
+            <img role="img" 
+                 src="vicky.img" 
+                 alt="vicky - Web Developer"
+                 aria-label="Profile photo of vicky">
+        </header>
+
+        <section id="about">
+            <h2 role="heading" aria-level="2">About Me</h2>
+            <p>A passionate web developer focused on creating accessible and user-friendly web experiences.</p>
+        </section>
+        <section id="projects">
+            <h2 role="heading" aria-level="2">My Projects</h2>
+            <div class="project-grid">
+                <article>
+                    <h3 role="heading" aria-level="3">E-commerce Platform</h3>
+                    <img role="img" 
+                         src="/api/placeholder/300/200" 
+                         alt="Screenshot of e-commerce project"
+                         aria-label="Visual representation of the e-commerce platform project">
+                    <p>An accessible e-commerce platform built with React and Node.js</p>
+                </article>
+
+                <article>
+                    <h3 role="heading" aria-level="3">Weather Application</h3>
+                    <img role="img" 
+                         src="vicky.img" 
+                         alt="Screenshot of weather application"
+                         aria-label="Visual representation of the weather application project">
+                    <p>A weather application with voice commands support</p>
+                </article>
+            </div>
+        </section>
+        <section id="contact">
+            <h2 role="heading" aria-level="2">Contact Me</h2>
+            <ul role="list">
+                <li role="listitem"><a href="#" role="link">Email</a></li>
+                <li role="listitem"><a href="#" role="link">LinkedIn</a></li>
+                <li role="listitem"><a href="#" role="link">GitHub</a></li>
+            </ul>
+        </section>
+    </main>
 </body>
-
 </html>
